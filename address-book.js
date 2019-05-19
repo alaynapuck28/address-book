@@ -17,6 +17,8 @@ function allUsers() {
         button.id= "more info";
         let text = document.createTextNode("user info");
 
+
+        //button function to get even more info about each user
         button.addEventListener("click",(e) => {
             let textBox = document.createElement('p');
             let pText = document.createTextNode("Cell: " + person.cell + " " + "Age: " + person.dob.age + " Email: " + person.email);
@@ -38,6 +40,7 @@ function allUsers() {
       
       console.log(multipleArray);
     });
+    
 }
 
 document.getElementById("allContacts").innerHTML = " ";
