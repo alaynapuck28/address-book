@@ -1,6 +1,6 @@
-function allUsers() {
+function allUsers(fetch, endpoint) {
   let multipleArray = null;
-  fetch("https://randomuser.me/api/?results=12")
+  fetch("https://randomuser.me/api/?results=12" + endpoint)
     .then(response => response.json())
     .then(data => {
       multipleArray = data.results;
@@ -47,6 +47,7 @@ function allUsers() {
 
 document.getElementById("allContacts").innerHTML = " ";
 
+
 function get() {
   fetch("https://randomuser.me/api/")
     .then(response => response.json())
@@ -72,7 +73,10 @@ let usersElement = document.querySelector("#users");
 window.onload = function() {
   allUsers();
   get();
-};
+}
 
-// .catch( oopsThisIsAnError => console.log("oops, looks like we got an error: ", oopsThisIsAnError))
-// .finally( ()=> console.log("finally, This function always runs...")) // Whether or not there's an error or success, this will happen such as stopping a loading wheel on the front end
+  // .catch(oopsThisIsAnError =>
+  //   console.log("oops, looks like we got an error: ", oopsThisIsAnError)
+  // )
+  // .finally(() => console.log("finally, This function always runs...")); // Whether or not there's an error or success, this will happen such as stopping a loading wheel on the front end
+

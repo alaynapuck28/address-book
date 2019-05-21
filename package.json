@@ -1,0 +1,22 @@
+{
+  "name": "address-book",
+  "version": "1.0.0",
+  "description": "",
+  "main": "address-book.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaynapuck28/address-book.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alaynapuck28/address-book/issues"
+  },
+  "homepage": "https://github.com/alaynapuck28/address-book#readme",
+  "dependencies": {
+    "mocha": "^6.1.4"
+  }
+}
