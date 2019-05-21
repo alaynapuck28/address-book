@@ -1,6 +1,3 @@
-
-
-
 function allUsers() {
   let multipleArray = null;
   fetch("https://randomuser.me/api/?results=12")
@@ -13,34 +10,39 @@ function allUsers() {
         let allContactsList = document.getElementById("allContacts");
         let allImage = document.createElement("img");
 
-        let button = document.createElement('button');
-        button.id= "more info";
+        let button = document.createElement("button");
+        button.id = "more info";
         let text = document.createTextNode("user info");
 
-
         //button function to get even more info about each user
-        button.addEventListener("click",(e) => {
-            let textBox = document.createElement('p');
-            let pText = document.createTextNode("Cell: " + person.cell + " " + "Age: " + person.dob.age + " Email: " + person.email);
-            textBox.appendChild(pText);
-            createAllLi.appendChild(textBox);
-        })
-
-     
+        button.addEventListener("click", e => {
+          let textBox = document.createElement("p");
+          let pText = document.createTextNode(
+            "Cell: " +
+              person.cell +
+              " " +
+              "Age: " +
+              person.dob.age +
+              " Email: " +
+              person.email
+          );
+          textBox.appendChild(pText);
+          createAllLi.appendChild(textBox);
+        });
 
         allImage.src = person.picture.large;
         createAllLi.appendChild(allImage);
-        createAllLi.appendChild(document.createTextNode(person.name.first + " " + person.name.last)
+        createAllLi.appendChild(
+          document.createTextNode(person.name.first + " " + person.name.last)
         );
         button.appendChild(text);
         createAllLi.appendChild(button);
-       
+
         allContactsList.append(createAllLi);
       });
-      
+
       console.log(multipleArray);
     });
-    
 }
 
 document.getElementById("allContacts").innerHTML = " ";
@@ -62,11 +64,10 @@ function get() {
       userDiv.appendChild(h3);
       userDiv.appendChild(img);
       usersElement.appendChild(userDiv);
-      userDiv.id="individualUser"
+      userDiv.id = "individualUser";
     });
 }
 let usersElement = document.querySelector("#users");
-
 
 window.onload = function() {
   allUsers();
