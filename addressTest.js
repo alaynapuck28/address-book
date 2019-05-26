@@ -6,7 +6,9 @@ function allUsers(fetch, endpoint) {
     fetch("https://randomuser.me/api/" + endpoint)
       .then(response => response.json())
       .then(data => {
-        multipleArray = data.results;})};
+        multipleArray = data.results;})
+      .catch(err => console.log(`Error,  ${err}`))};
+
 
 describe("allUsers", () => {
   it("tests fetch and user is returned", () => {
@@ -23,6 +25,22 @@ describe("allUsers", () => {
     };
     allUsers(testFetch, "?results=12");
   });
+
+  it('test wrong apiKey', ()=>{
+    const testFetch = url =>{
+       key === "a3957b"
+       assert.equal(allUsers(testFetch), err)
+    }
+    
+  })
+  it('test for correct apiKey', ()=>{
+    const testFetch = url =>{
+       key === "a3957b"
+       assert.equal(allUsers(testFetch))
+    }
+    
+  })
+  
 
   it("tests more 5000 users returned is out of range", () => {
     const testFetch = url => {
