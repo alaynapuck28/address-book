@@ -28,7 +28,7 @@ describe("allUsers", () => {
 
   it('test wrong apiKey', ()=>{
     const testFetch = url =>{
-       key === "a3957b"
+       key === "magic key"
        assert.equal(allUsers(testFetch), err)
     }
     
