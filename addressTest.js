@@ -11,13 +11,7 @@ function allUsers(fetch, endpoint) {
 
 
 describe("allUsers", () => {
-  it("tests fetch and user is returned", () => {
-    const testFetch = url => {
-      assert(url === "https://randomuser.me/api/");
-      return new Promise(function() {});
-    };
-    allUsers(testFetch);
-  });
+
   it("tests 12 users", () => {
     const testFetch = url => {
       assert(url === "https://randomuser.me/api/?results=12");
@@ -26,27 +20,19 @@ describe("allUsers", () => {
     allUsers(testFetch, "?results=12");
   });
 
-  it('test wrong apiKey', ()=>{
+  it('tests wrong apiKey', ()=>{
     const testFetch = url =>{
-       key === "magic key"
+       key === "key"
        assert.equal(allUsers(testFetch), err)
     }
     
   })
-  it('test for correct apiKey', ()=>{
-    const testFetch = url =>{
-       key === "a3957b"
-       assert.equal(allUsers(testFetch))
-    }
-    
-  })
-  
 
-  it("tests more 5000 users returned is out of range", () => {
+  it("tests more than 5000 users returned is out of range", () => {
     const testFetch = url => {
       assert(url === "https://randomuser.me/api/?results=5001");
       return new Promise(function() {});
     };
     allUsers(testFetch, "?results=5001");
   });
-});
+})
